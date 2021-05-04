@@ -8,53 +8,48 @@
 </head>
 <body>
     <?php
+
+        // Snack 1
         
         $partite = [
 
             [
-
                 'locale' => 'A|X Armani Exchange Milano',
                 'ospite' => 'Virtus Segafredo Bologna',
                 'puntiLocale' => 94,
                 'puntiOspite' => 84
             ],
             [
-
                 'locale' => 'Germani Brescia',
                 'ospite' => 'Banco di Sardegna Sassari',
                 'puntiLocale' => 82,
                 'puntiOspite' => 94
             ],
             [
-
                 'locale' => 'Allianz Pallacanestro Trieste',
                 'ospite' => 'Carpegna Prosciutto Pesaro',
                 'puntiLocale' => 101,
                 'puntiOspite' => 88
             ],
             [
-
                 'locale' => 'Umana Reyer Venezia',
                 'ospite' => 'Fortitudo Lavoropiù Bologna',
                 'puntiLocale' => 92,
                 'puntiOspite' => 76
             ],
             [
-
                 'locale' => 'De Longhi Treviso Basket',
                 'ospite' => 'Openjobmetis Varese',
                 'puntiLocale' => 94,
                 'puntiOspite' => 103
             ],
             [
-
                 'locale' => 'Acqua S.Bernardo Cantù',
                 'ospite' => 'UNAHOTELS Reggio Emilia',
                 'puntiLocale' => 71,
                 'puntiOspite' => 72
             ],
             [
-
                 'locale' => 'Happy Casa Brindisi',
                 'ospite' => 'Vanoli Basket Cremona',
                 'puntiLocale' => 67,
@@ -73,10 +68,30 @@
             $puntiLocale = $partita['puntiLocale'];
             $puntiOspite = $partita['puntiOspite'];
 
-            echo '<p>' . $squadraLocale . ' - ' . $squadraOspite . ' | ' . $puntiLocale . ' - ' . $puntiOspite . '</p>';
-            // var_dump($squadraLocale) ;
-
+            // echo '<p>' . $squadraLocale . ' - ' . $squadraOspite . ' | ' . $puntiLocale . ' - ' . $puntiOspite . '</p>';
         }
+
+
+
+        // Snack 2
+
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = intval($_GET['age']);
+
+        if (strpos($mail, '.') && strpos($mail, '@')){
+
+            $mailIsValid = true;
+        };
+
+        if (strlen($name) > 3 && $mailIsValid && gettype($age) == 'integer'){
+
+            echo 'Accesso riuscito';
+        } else {
+
+            echo 'Accesso negato';
+        }
+
     ?>
 </body>
 </html>
